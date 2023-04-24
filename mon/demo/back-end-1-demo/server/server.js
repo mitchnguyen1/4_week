@@ -16,7 +16,7 @@ const inventory = [
 ]
 
 //endpoints
-app.get('/api/inventory',(req,res)=>{
+app.get('/api/inventory',(req,›res)=>{
     //query param for ?item=${var}
     if(req.query.item){
         const filtered = inventory.filter((invItem) => invItem.toLowerCase().includes(req.query.item))
