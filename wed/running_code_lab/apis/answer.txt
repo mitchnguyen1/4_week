@@ -1,0 +1,80 @@
+1.the height of Darth Vader
+https://swapi.dev/api/people/4
+
+2.the population of the planet Alderaan
+https://swapi.dev/api/planets/2
+
+3.the name of the manufacturer of the Millennium Falcon
+https://swapi.dev/api/starships/10/
+
+4.the name of the species that C-3PO belongs to (multiple URLs)
+C-3P0: https://swapi.dev/api/people/2/"
+Species: https://swapi.dev/api/species/2/
+
+5.the title of each film that Obi-Wan Kenobi is in (multiple URLs)
+Obi: https://swapi.dev/api/people/10/
+"films": [
+                "https://swapi.dev/api/films/1/",
+                "https://swapi.dev/api/films/2/",
+                "https://swapi.dev/api/films/3/",
+                "https://swapi.dev/api/films/4/",
+                "https://swapi.dev/api/films/5/",
+                "https://swapi.dev/api/films/6/"
+            ],
+
+6.use the search query (the how to on the search query is at the bottom of the Getting Started section of the documentation) to get the information about the Millennium Falcon, it’s a starship
+https://swapi.dev/api/starships/?search=Millennium
+
+
+7.Check if the POST request accept params, queries, and/or a body. Which one(s) and what information is it expecting to be sent?
+Body: text
+
+8.What data type does the GET request return?
+id,text,date
+
+9.What would the URL look like for deleting the post with the id 555? (This post does not exist anymore, but the syntax is the same for existing posts, )
+https://practiceapi.devmountain.com/api/posts?id=555
+
+10.List the possible response codes from the GET request at ‘/posts/filter’
+200	- Returns an array of filtered posts
+409	- Request query is missing required text property.
+
+11.Create a post whose text is your name, record the URL and body here:
+URL: https://practiceapi.devmountain.com/api/posts
+Body: {
+  "text": "Mitchell"
+}
+
+12.What would the URL and body object be to update the post you just made to contain your favorite color instead of your name?
+URL: 'https://practiceapi.devmountain.com/api/posts?id=1643'
+Body: {
+  "text": "Red"
+}
+
+13.What is the URL to get posts that contain the text “blue”?
+URL: https://practiceapi.devmountain.com/api/posts/filter?text=blue
+
+14.Make a request to GET all the posts. What are the content type and charset of the response? (Hint: look on the Headers)
+Content Type: application/json; 
+Charset: utf-8
+
+15.What would cause a PUT request to return a 409 status?
+409	- Request was missing req.body.text
+
+16.What happens if you try to send a query in the GET request URL? Why do you get that response?
+Returns: 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Error</title>
+</head>
+
+<body>
+	<pre>Cannot GET /api/posts/1640</pre>
+</body>
+
+</html>
+
+Theres no endpoint for get method besides the filter query and get all posts. Adding an id number or any query will throw a 404 error.
